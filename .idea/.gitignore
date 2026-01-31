@@ -8,3 +8,6 @@
 /dataSources.local.xml
 # Environment variables
 .env
+/modules.xml
+/tgbot.iml
+/vcs.xml
