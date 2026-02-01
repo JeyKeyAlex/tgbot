@@ -1,0 +1,12 @@
+# Render.com Blueprint для Telegram-бота
+# Документация: https://render.com/docs/blueprint-spec
+
+services:
+  - type: worker
+    name: tgbot
+    env: go
+    buildCommand: go build -o bot ./cmd/app
+    startCommand: ./bot
+    envVars:
+      - key: TELEGRAM_APITOKEN
+        sync: false  # задаётся вручную в Dashboard (секрет)
