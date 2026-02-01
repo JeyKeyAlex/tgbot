@@ -37,9 +37,15 @@ func NewConfig() (*Configuration, error) {
 type (
 	Configuration struct {
 		Telegram Telegram `env:",prefix=TELEGRAM_"`
+		Server   Server
 	}
 
 	Telegram struct {
 		ApiToken string `env:"APITOKEN,required"`
+	}
+
+	Server struct {
+		Port           string `env:"PORT"`             // Render задаёт PORT автоматически
+		WebhookBaseURL string `env:"WEBHOOK_BASE_URL"` // например https://tgbot.onrender.com
 	}
 )
